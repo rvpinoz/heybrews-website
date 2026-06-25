@@ -87,7 +87,7 @@ export function Navbar() {
           fgColor={logoFg}
         />
         <span className="text-[22px] font-bold tracking-tight max-sm:text-lg">
-          heybrews
+          HeyBrews
         </span>
       </a>
 

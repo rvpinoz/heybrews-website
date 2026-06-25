@@ -39,11 +39,11 @@ export const I18N: I18nData = {
     prod_2_t: "Brewer's Daily Kit",
     prod_2_p: "Tote, tumbler, dan zine resep dari member heybrews.",
     about_eyebrow: "Tentang kami",
-    about_title: "Jadi, heybrews itu apa?",
+    about_title: "Jadi, HeyBrews itu apa?",
     about_p1:
-      "heybrews adalah creator collective yang disatukan oleh satu hal sederhana: cinta kopi. Kami bikin konten, kembangkan produk, dan kumpulkan orang-orang yang mau belajar dan berbagi soal brewing — dari pemula total sampai barista berpengalaman.",
+      "HeyBrews adalah komunitas bagi para penikmat kopi, home brewer, barista, dan siapa saja yang ingin menikmati dunia kopi tanpa tekanan. Kami percaya bahwa kopi bukan hanya soal teknik dan kesempurnaan, tetapi juga tentang proses, pertemanan, dan kesenangan dalam setiap seduhan.",
     about_p2:
-      "Bukan sekadar akun, tapi tempat bertumbuh. Setiap member punya suara, dan bareng-bareng kami bikin heybrews jadi lebih dari jumlah anggotanya.",
+      'Dengan semangat "Brew for Fun, Not Perfection", HeyBrews menjadi ruang yang inklusif untuk belajar, berbagi pengalaman, dan bertumbuh bersama melalui berbagai kegiatan seperti cupping, brewing session, kompetisi santai, kolaborasi dengan brand kopi, hingga event komunitas. Karena bagi kami, H adalah Hahahihi, E adalah Enjoy, dan Y adalah Yang Penting Ngopi. ☕',
     stat_1: "Member aktif",
     stat_2: "Total reach",
     stat_3: "Kolaborasi",
@@ -64,8 +64,8 @@ export const I18N: I18nData = {
     foot_product: "Produk",
     foot_event: "Event",
     foot_connect: "Terhubung",
-    foot_copy: "© 2026 heybrews. Dibuat sambil ngopi.",
-    foot_made: "Dibuat dengan care ☕",
+    foot_copy: "© 2026 HeyBrews. Dibuat sambil ngopi.",
+    foot_made: "Developed by Derd ☕",
   },
   en: {
     nav_collab: "Collaborate",
@@ -100,11 +100,11 @@ export const I18N: I18nData = {
     prod_2_t: "Brewer's Daily Kit",
     prod_2_p: "Tote, tumbler, and a recipe zine from heybrews members.",
     about_eyebrow: "About us",
-    about_title: "So, what is heybrews?",
+    about_title: "So, what is HeyBrews?",
     about_p1:
-      "heybrews is a creator collective united by one simple thing: a love for coffee. We make content, develop products, and gather people who want to learn and share about brewing — from total beginners to seasoned baristas.",
+      "HeyBrews is a community for coffee lovers, home brewers, baristas, and anyone who wants to enjoy the world of coffee without pressure. We believe coffee isn't just about technique and perfection, but also about the process, friendship, and joy in every brew.",
     about_p2:
-      "Not just an account, but a place to grow. Every member has a voice, and together we make heybrews more than the sum of its members.",
+      'With the spirit of "Brew for Fun, Not Perfection", HeyBrews is an inclusive space to learn, share experiences, and grow together through activities like cupping, brewing sessions, casual competitions, brand collaborations, and community events. Because for us, H is for Hahahihi, E is for Enjoy, and Y is for Yang Penting Ngopi. ☕',
     stat_1: "Active members",
     stat_2: "Total reach",
     stat_3: "Collaborations",
@@ -125,7 +125,7 @@ export const I18N: I18nData = {
     foot_product: "Products",
     foot_event: "Events",
     foot_connect: "Connect",
-    foot_copy: "© 2026 heybrews. Made over coffee.",
-    foot_made: "Made with care ☕",
+    foot_copy: "© 2026 HeyBrews. Made over coffee.",
+    foot_made: "Developed by Derd ☕",
   },
 };
