@@ -3,6 +3,7 @@
 import { useLang } from '@/context/LangContext';
 import { ScrollReveal } from '@/components/ScrollReveal';
 import { Eyebrow } from '@/components/Eyebrow';
+import PhotoCollage from '@/components/PhotoCollage';
 
 export default function About() {
   const { t } = useLang();
@@ -49,19 +50,8 @@ export default function About() {
               </div>
             </div>
 
-            {/* Right column — decorative visual */}
-            <div className="relative aspect-square overflow-hidden rounded-xl border border-hairline bg-canvas-soft">
-              {/* Blue blob */}
-              <div className="absolute left-[5%] top-[10%] h-[50%] w-[60%] rounded-lg bg-primary/10" />
-              {/* Teal blob */}
-              <div className="absolute bottom-[15%] right-[5%] h-[40%] w-[45%] rounded-lg bg-teal/15" />
-              {/* Orange blob */}
-              <div className="absolute right-[20%] top-[30%] h-[30%] w-[35%] rounded-lg bg-orange/10" />
-              {/* Coffee emoji */}
-              <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-6xl opacity-30">
-                &#9749;
-              </span>
-            </div>
+            {/* Right column — photo collage */}
+            <PhotoCollage />
           </div>
         </ScrollReveal>
       </div>
