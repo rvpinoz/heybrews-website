@@ -1,9 +1,10 @@
 import { Navbar } from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import Partners from "@/components/Partners";
-import Collab from "@/components/Collab";
 import About from "@/components/About";
-import Members from "@/components/Members";
+import VideoIntro from "@/components/VideoIntro";
+import Collab from "@/components/Collab";
+import Events from "@/components/Events";
+import Partners from "@/components/Partners";
 import MarqueeStrip from "@/components/MarqueeStrip";
 import CtaStrip from "@/components/CtaStrip";
 import Footer from "@/components/Footer";
@@ -14,10 +15,11 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
-        <Partners />
-        <Collab />
         <About />
-        <Members />
+        <VideoIntro />
+        <Collab />
+        <Events />
+        <Partners />
         <MarqueeStrip />
         <CtaStrip />
       </main>

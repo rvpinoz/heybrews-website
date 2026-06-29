@@ -82,8 +82,8 @@ export default function Hero() {
         loop
         playsInline
         preload="metadata"
-        src="/hero-web.mp4"
-        poster="/hero-poster.jpg"
+        src="/hero/hero-web.mp4"
+        poster="/hero/hero-poster.jpg"
       />
 
       {/* Dark overlay */}

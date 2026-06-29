@@ -1,9 +1,12 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Geist } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/context/ThemeContext";
 import { LangProvider } from "@/context/LangContext";
 import { Preloader } from "@/components/Preloader";
+import { cn } from "@/lib/utils";
+
+const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
 const inter = Inter({
   subsets: ["latin"],
@@ -20,7 +23,7 @@ export const metadata: Metadata = {
     title: "heybrews — komunitas para brewer",
     description:
       "Creator collective untuk siapa saja yang cinta kopi dan home brewing.",
-    images: ["/hero-poster.jpg"],
+    images: ["/hero/hero-poster.jpg"],
     locale: "id_ID",
     type: "website",
   },
@@ -29,7 +32,7 @@ export const metadata: Metadata = {
     title: "heybrews — komunitas para brewer",
     description:
       "Creator collective untuk siapa saja yang cinta kopi dan home brewing.",
-    images: ["/hero-poster.jpg"],
+    images: ["/hero/hero-poster.jpg"],
   },
   icons: { icon: "/favicon.svg" },
 };
@@ -40,7 +43,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="id" data-theme="light" className={`${inter.variable}`}>
+    <html lang="id" data-theme="light" className={cn(inter.variable, "font-sans", geist.variable)}>
       <body className="font-sans">
         <ThemeProvider>
           <LangProvider>

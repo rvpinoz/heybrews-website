@@ -9,7 +9,7 @@ export default function Footer() {
   const exploreLinks = [
     { href: '#collab', label: t('foot_collab') },
     { href: '#about', label: t('nav_about') },
-    { href: '#members', label: t('nav_members') },
+    { href: '/members', label: t('nav_members') },
   ];
 
   const collabLinks = [

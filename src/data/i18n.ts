@@ -7,6 +7,7 @@ export const SWAP_WORDS: Record<Lang, string[]> = {
 
 export const I18N: I18nData = {
   id: {
+    nav_home: "Home",
     nav_collab: "Kolaborasi",
     nav_about: "Tentang",
     nav_members: "Member",
@@ -52,6 +53,18 @@ export const I18N: I18nData = {
     mem_sub:
       "Tiap akun punya gaya dan ceritanya sendiri. Ini para brewer di balik heybrews.",
     mem_focus: "fokus",
+    events_eyebrow: "Kegiatan",
+    events_title: "Yang sudah kami lakuin bareng",
+    events_sub: "Dari cupping session sampai kolaborasi brand — ini jejak perjalanan HeyBrews.",
+    video_eyebrow: "Kenalan",
+    video_title: "Tonton dulu, biar lebih kenal",
+    video_sub: "Video singkat tentang siapa kami, kenapa kami ada, dan gimana caranya ikut.",
+    nav_gallery: "Galeri",
+    gallery_eyebrow: "Galeri",
+    gallery_title: "Momen-momen HeyBrews",
+    gallery_sub: "Foto, video, dan cerita di balik setiap seduhan dan kolaborasi.",
+    gallery_all: "Semua",
+    gallery_follow: "Ikuti di Instagram",
     cta_title: "Punya ide buat dikerjain bareng?",
     cta_sub:
       "Cerita ke kami soal brand, produk, atau event kamu. Kami balas secepatnya.",
@@ -68,6 +81,7 @@ export const I18N: I18nData = {
     foot_made: "Developed by Derd ☕",
   },
   en: {
+    nav_home: "Home",
     nav_collab: "Collaborate",
     nav_about: "About",
     nav_members: "Members",
@@ -113,6 +127,18 @@ export const I18N: I18nData = {
     mem_sub:
       "Each account has its own style and story. These are the brewers behind heybrews.",
     mem_focus: "focus",
+    events_eyebrow: "Activities",
+    events_title: "What we’ve done together",
+    events_sub: "From cupping sessions to brand collaborations — here’s HeyBrews’ journey so far.",
+    video_eyebrow: "Get to know us",
+    video_title: "Watch first, get to know us",
+    video_sub: "A short video about who we are, why we exist, and how to join.",
+    nav_gallery: "Gallery",
+    gallery_eyebrow: "Gallery",
+    gallery_title: "HeyBrews Moments",
+    gallery_sub: "Photos, videos, and stories behind every brew and collaboration.",
+    gallery_all: "All",
+    gallery_follow: "Follow on Instagram",
     cta_title: "Got an idea to build together?",
     cta_sub:
       "Tell us about your brand, product, or event. We’ll get back to you soon.",
