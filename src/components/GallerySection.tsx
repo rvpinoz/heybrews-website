@@ -3,8 +3,9 @@
 import { useLang } from '@/context/LangContext';
 import { Eyebrow } from '@/components/Eyebrow';
 import Gallery from '@/components/Gallery';
+import type { GalleryRecord } from '@/types/gallery';
 
-export default function GallerySection() {
+export default function GallerySection({ items }: { items: GalleryRecord[] }) {
   const { t } = useLang();
 
   return (
@@ -17,7 +18,7 @@ export default function GallerySection() {
             {t('gallery_sub')}
           </p>
         </div>
-        <Gallery />
+        <Gallery items={items} />
       </div>
     </section>
   );

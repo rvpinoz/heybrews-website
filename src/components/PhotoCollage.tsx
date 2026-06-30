@@ -20,7 +20,7 @@ const PHOTOS = [
   '/member/@letsbrewit.png',
   '/member/@mas.haff.png',
   '/member/@omjeka.coffee.png',
-  '/member/@ritual_pagi_.png',
+  '/member/@koko_mokapot.png',
   '/member/@suryadioei.png',
   '/member/@yanghotaja.png',
 ];

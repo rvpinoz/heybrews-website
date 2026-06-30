@@ -1,11 +1,11 @@
 'use client';
 
-import { useState, useRef, useCallback, useEffect } from 'react';
+import { useState, useRef, useCallback, useEffect, useMemo } from 'react';
 import Image from 'next/image';
 import { useLang } from '@/context/LangContext';
 import { gsap, ScrollTrigger, useGSAP } from '@/lib/gsap';
 import { cn } from '@/lib/utils';
-import { GALLERY, CATEGORIES, type GalleryItem } from '@/data/gallery';
+import type { GalleryRecord } from '@/types/gallery';
 
 /* ── Lightbox ──
    Custom fullscreen modal for photos. Index references the FILTERED list
@@ -17,7 +17,7 @@ function Lightbox({
   onClose,
   onChange,
 }: {
-  items: GalleryItem[];
+  items: GalleryRecord[];
   index: number;
   lang: string;
   onClose: () => void;
@@ -46,7 +46,7 @@ function Lightbox({
   }, [index, items.length, onClose, onChange]);
 
   if (!item) return null;
-  const alt = lang === 'en' ? item.alt_en : item.alt_id;
+  const alt = lang === 'en' ? item.altEn : item.altId;
 
   return (
     <div
@@ -56,7 +56,6 @@ function Lightbox({
       className="fixed inset-0 z-[200] flex items-center justify-center bg-black/85 p-4 backdrop-blur-sm motion-reduce:backdrop-blur-none"
       onClick={onClose}
     >
-      {/* Photo */}
       <div
         className="relative max-h-[90vh] max-w-[90vw] animate-[lightbox-in_.25s_ease-out] motion-reduce:animate-none"
         onClick={(e) => e.stopPropagation()}
@@ -67,12 +66,9 @@ function Lightbox({
           alt={alt}
           className="max-h-[85vh] max-w-[85vw] rounded-lg object-contain"
         />
-
-        {/* Caption */}
         <p className="mt-3 text-center text-sm text-white/70">{alt}</p>
       </div>
 
-      {/* Close */}
       <button
         onClick={onClose}
         aria-label="Close"
@@ -83,7 +79,6 @@ function Lightbox({
         </svg>
       </button>
 
-      {/* Prev */}
       {items.length > 1 && (
         <button
           onClick={(e) => { e.stopPropagation(); onChange((index - 1 + items.length) % items.length); }}
@@ -96,7 +91,6 @@ function Lightbox({
         </button>
       )}
 
-      {/* Next */}
       {items.length > 1 && (
         <button
           onClick={(e) => { e.stopPropagation(); onChange((index + 1) % items.length); }}
@@ -109,7 +103,6 @@ function Lightbox({
         </button>
       )}
 
-      {/* Counter */}
       <span className="absolute bottom-4 left-1/2 -translate-x-1/2 text-[13px] text-white/50">
         {index + 1} / {items.length}
       </span>
@@ -118,21 +111,26 @@ function Lightbox({
 }
 
 /* ── Gallery grid ── */
-export default function Gallery() {
+export default function Gallery({ items }: { items: GalleryRecord[] }) {
   const { lang, t } = useLang();
   const [active, setActive] = useState<string | null>(null);
   const [lightboxIndex, setLightboxIndex] = useState(-1);
   const gridRef = useRef<HTMLDivElement>(null);
   const tilesRef = useRef<(HTMLDivElement | null)[]>([]);
 
-  const filtered = active
-    ? GALLERY.filter((g) => g.category_id === active)
-    : GALLERY;
+  // Categories derived from the actual data — new categories from admin show up automatically
+  const categories = useMemo(() => {
+    const seen = new Map<string, { id: string; en: string }>();
+    for (const item of items) {
+      if (!seen.has(item.categoryId)) {
+        seen.set(item.categoryId, { id: item.categoryId, en: item.categoryEn });
+      }
+    }
+    return Array.from(seen.values());
+  }, [items]);
 
-  /* Re-run animation whenever filtered list changes.
-     Uses fromTo so the end state (opacity:1) is always explicit,
-     and clearProps removes inline styles after completion so
-     React re-renders aren't fighting stale GSAP values. */
+  const filtered = active ? items.filter((g) => g.categoryId === active) : items;
+
   useGSAP(
     () => {
       if (!gridRef.current || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
@@ -186,6 +184,8 @@ export default function Gallery() {
     }
   };
 
+  if (items.length === 0) return null;
+
   return (
     <>
       {/* Filter chips */}
@@ -201,7 +201,7 @@ export default function Gallery() {
         >
           {t('gallery_all')}
         </button>
-        {CATEGORIES.map((cat) => (
+        {categories.map((cat) => (
           <button
             key={cat.id}
             onClick={() => handleFilter(cat.id)}
@@ -234,9 +234,9 @@ export default function Gallery() {
           >
             <Image
               src={item.src}
-              alt={lang === 'en' ? item.alt_en : item.alt_id}
+              alt={lang === 'en' ? item.altEn : item.altId}
               fill
-              unoptimized={item.src.endsWith('.svg')}
+              unoptimized={item.src.endsWith('.svg') || item.src.includes('supabase.co')}
               className="object-cover transition-transform duration-500 group-hover:scale-[1.06] motion-reduce:transition-none"
               sizes={
                 item.span === 'lg'
@@ -246,7 +246,6 @@ export default function Gallery() {
               loading="lazy"
             />
 
-            {/* Hover overlay */}
             <div className="absolute inset-0 flex items-center justify-center bg-primary/0 transition-colors duration-300 group-hover:bg-primary/20 motion-reduce:transition-none">
               <span className="scale-0 rounded-full bg-white/90 p-3 text-primary transition-transform duration-300 group-hover:scale-100 motion-reduce:scale-100 motion-reduce:opacity-0 motion-reduce:group-hover:opacity-100 motion-reduce:transition-none">
                 <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -259,7 +258,6 @@ export default function Gallery() {
         ))}
       </div>
 
-      {/* Lightbox */}
       {lightboxIndex >= 0 && (
         <Lightbox
           items={filtered}

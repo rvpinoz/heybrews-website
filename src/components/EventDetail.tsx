@@ -3,14 +3,14 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useLang } from '@/context/LangContext';
-import type { EventItem } from '@/data/events';
+import type { EventRecord } from '@/types/event';
 
-export default function EventDetail({ event }: { event: EventItem }) {
+export default function EventDetail({ event }: { event: EventRecord }) {
   const { lang } = useLang();
 
-  const title = lang === 'en' ? event.title_en : event.title_id;
-  const desc = lang === 'en' ? event.desc_en : event.desc_id;
-  const tag = lang === 'en' ? event.tag_en : event.tag_id;
+  const title = lang === 'en' ? event.titleEn : event.titleId;
+  const desc = lang === 'en' ? event.descEn : event.descId;
+  const tag = lang === 'en' ? event.tagEn : event.tagId;
 
   const date = new Date(event.date).toLocaleDateString(
     lang === 'id' ? 'id-ID' : 'en-US',
@@ -38,6 +38,7 @@ export default function EventDetail({ event }: { event: EventItem }) {
             className="object-cover"
             sizes="(max-width:768px) 100vw, 720px"
             priority
+            unoptimized={event.img.includes('supabase.co')}
           />
         </div>
       </div>

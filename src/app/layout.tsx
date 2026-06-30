@@ -44,7 +44,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="id" data-theme="light" className={cn(inter.variable, "font-sans", geist.variable)}>
-      <body className="font-sans">
+      <body className="font-sans" suppressHydrationWarning>
         <ThemeProvider>
           <LangProvider>
             <Preloader />

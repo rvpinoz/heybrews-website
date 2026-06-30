@@ -222,7 +222,7 @@ export function Preloader() {
       {/* Logo — draw stroke */}
       <svg
         viewBox="0 0 1980 1980"
-        className="h-24 w-24"
+        className="h-40 w-40"
         xmlns="http://www.w3.org/2000/svg"
       >
         {PATHS.map((d, i) => (

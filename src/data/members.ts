@@ -153,13 +153,13 @@ export const MEMBERS: Member[] = [
   },
   {
     name: "Ritual Pagi",
-    handle: "@ritual_pagi_",
-    img: "/member/@ritual_pagi_.png",
+    handle: "@koko_mokapot",
+    img: "/member/@koko_mokapot.png",
     fid: "Morning brew",
     fen: "Morning brew",
     bio_id: "Ritual pagi dimulai dari nyeduh kopi — sharing morning brew routine.",
     bio_en: "Morning rituals start with brewing coffee — sharing the daily routine.",
-    link: "https://instagram.com/ritual_pagi_",
+    link: "https://instagram.com/koko_mokapot",
   },
   {
     name: "Surya Dioei",
