@@ -108,7 +108,7 @@ export default function MarqueeStrip() {
   }, []);
 
   return (
-    <section className="relative -my-4 overflow-hidden py-5">
+    <section className="relative z-30 -my-4 py-5">
       <div
         className="relative z-10 border-y-[3px] border-white/20 bg-primary"
         style={{ rotate: '-2deg', scale: '1.04' }}
