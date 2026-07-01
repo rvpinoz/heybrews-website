@@ -2,9 +2,9 @@
 
 import Image from 'next/image';
 import { useLang } from '@/context/LangContext';
-import type { Member } from '@/types/member';
+import type { MemberRecord } from '@/types/member-record';
 
-export default function MemberCard({ member }: { member: Member }) {
+export default function MemberCard({ member }: { member: MemberRecord }) {
   const { lang } = useLang();
 
   return (
@@ -23,6 +23,7 @@ export default function MemberCard({ member }: { member: Member }) {
           className="object-cover transition-transform duration-400 group-hover:scale-105"
           loading="lazy"
           sizes="(max-width:640px) 100vw, (max-width:900px) 50vw, 25vw"
+          unoptimized={member.img.includes('supabase.co')}
         />
         {/* Handle badge */}
         <span className="absolute bottom-[10px] left-[10px] rounded-full bg-black/55 px-3 py-1 text-[12px] font-semibold text-white backdrop-blur-lg">

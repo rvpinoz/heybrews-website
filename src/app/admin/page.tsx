@@ -6,11 +6,11 @@ import AdminShell from '@/components/admin/AdminShell';
 const ACTIVE_MODULES = [
   { name: 'Events', desc: 'Kelola event dan kolaborasi', href: '/admin/events' },
   { name: 'Gallery', desc: 'Foto dan video komunitas', href: '/admin/gallery' },
+  { name: 'Members', desc: 'Data member HeyBrews', href: '/admin/members' },
 ];
 
 const UPCOMING_MODULES = [
   { name: 'Blog', desc: 'Artikel dan cerita kopi' },
-  { name: 'Member', desc: 'Data member HeyBrews' },
 ];
 
 export default async function AdminDashboard() {

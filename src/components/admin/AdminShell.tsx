@@ -10,9 +10,10 @@ const NAV = [
   { label: 'Dashboard', href: '/admin' },
   { label: 'Events', href: '/admin/events' },
   { label: 'Gallery', href: '/admin/gallery' },
+  { label: 'Members', href: '/admin/members' },
 ];
 
-const COMING_SOON = ['Blog', 'Member'];
+const COMING_SOON = ['Blog'];
 
 export default function AdminShell({
   user,

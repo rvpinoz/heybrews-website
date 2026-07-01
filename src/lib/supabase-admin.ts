@@ -2,6 +2,7 @@ import { createClient, type SupabaseClient } from '@supabase/supabase-js';
 
 export const EVENTS_BUCKET = 'event-images';
 export const GALLERY_BUCKET = 'gallery-images';
+export const MEMBERS_BUCKET = 'member-images';
 
 let client: SupabaseClient | null = null;
 

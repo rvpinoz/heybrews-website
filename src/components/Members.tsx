@@ -3,11 +3,13 @@
 import { useLang } from '@/context/LangContext';
 import { ScrollReveal } from '@/components/ScrollReveal';
 import { Eyebrow } from '@/components/Eyebrow';
-import { MEMBERS } from '@/data/members';
 import MemberCard from '@/components/MemberCard';
+import type { MemberRecord } from '@/types/member-record';
 
-export default function Members() {
+export default function Members({ members }: { members: MemberRecord[] }) {
   const { t } = useLang();
+
+  if (members.length === 0) return null;
 
   return (
     <section id="members" className="py-[88px]">
@@ -24,8 +26,8 @@ export default function Members() {
 
           {/* Grid */}
           <div className="grid grid-cols-4 gap-4 max-md:grid-cols-2 max-sm:grid-cols-1">
-            {MEMBERS.map((member) => (
-              <MemberCard key={member.handle} member={member} />
+            {members.map((member) => (
+              <MemberCard key={member.id} member={member} />
             ))}
           </div>
         </ScrollReveal>

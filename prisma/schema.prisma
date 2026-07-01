@@ -95,3 +95,18 @@ model GalleryItem {
   createdAt   DateTime    @default(now())
   updatedAt   DateTime    @updatedAt
 }
+
+model Member {
+  id        String   @id @default(cuid())
+  handle    String   @unique
+  name      String
+  img       String
+  fid       String
+  fen       String
+  bioId     String
+  bioEn     String
+  link      String
+  order     Int      @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
